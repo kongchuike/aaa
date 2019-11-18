@@ -1,0 +1,62 @@
+ BaseException–所有内建的异常的基类
+1SystemExit–由sys.exit()函数引发此异常。如果不处理这个异常，Python解释器退出
+2KeyboardInterrupt–当用户按下中断键（通常是Ctrl-C或Delete）时引发
+3GeneratorExit–当调用一个generator对象的close()方法时引发
+4 Exception–所有内建的、非系统退出的异常，都是从该类派生的。此外，应该从该       类派生所有用户定义的异常
+ 4.1StopIteration–当一个iterator的next()方法发出信号，表示没有更多的值时引发
+ 4.2ArithmeticError–各种算术错误引发的内建异常的基类
+  4.2.1FloatingPointError–当浮点数操作失败时引发
+  4.2.2OverflowError–当要表示算术运算的结果太大时引发，长整型不会引发该异常
+  4.2.3ZeroDivisionError–当除法或取模运算的第2个参数为0时引发
+ 4.3AssertionError–当assert语句失败时引发
+ 4.4AttributeError–当属性引用或赋值失败时引发。当对象根本不支持属性引用或属赋值时，将引发TypeError
+ 4.5BufferError–当buffer相关的操作无法执行时引发
+ 4.6EOFError–当内建函数input()或raw_input()的其中之一，在触及文件结尾(EOF)情形， 而没有读取到任何数据时引发
+ 4.7ImportError–当import语句无法找到模块定义，或者当from...import语句未能找到要导入的名称时引发
+4.8LookupError–当用于映射或序列的键或索引无效时引发的异常的基类
+     4.8.1IndexError–当序列下标超出取值范围时引发。（切片索引会被静默地截取到允许范围内；如果索引不是一个普通整数，则引发TypeError()
+     4.8.2KeyError–当在现有键的集合中找不到映射的键时引发
+4.9MemoryError–当一个操作将内存耗尽，但情况仍可挽救时（通过删除某些对象）时引发
+4.10NameError–当找不到本地或全局名称时引发
+ 4.101UnboundLocalError–当引用函数或方法局部变量，但变量没有绑定值时引发
+4.11OSError
+ 4.11.1BlockingIOError–当一个操作阻塞一个设置为非阻塞操作的对象（例如套接字）时引发
+ 4.11.2ChildProcessError–在对子进程执行操作失败时引发
+ 4.11.3ConnectionError–连接相关问题的基类
+  4.11.3.1BrokenPipeError–当试图在管道上写入而另一端已关闭时尝试写入，或试图写入已关闭写入的套接字时引发
+  4.11.3.2ConnectionAbortedError–当连接尝试被同伴中止时引发
+  4.11.3.3ConnectionRefusedError–当连接尝试被同伴拒绝时引发
+  4.11.3.4ConnectionResetError–当连接被同伴重置时引发
+ 4.11.4FileExistsError–尝试创建已存在的文件或目录时引发
+ 4.11.5FileNotFoundError–当请求文件或目录但不存在时引发
+ 4.11.6EnterruptedError–当系统调用被传入信号中断时引发
+ 4.11.7sADirectoryError–在目录上请求文件操作时引发
+ 4.11.8NotADirectoryError–当目录操作被请求的目录不是目录时引发
+ 4.11.9PermissionError–当尝试运行没有足够访问权限的操作时引发
+ 4.11.10ProcessLookupError–当一个给定的过程不存在时引发
+ 4.11.11TimeoutError–当系统功能在系统级别超时时引发
+4.12ReferenceError–当用一个由weakref.proxy()函数创建的弱引用代理，去访问引用者的属性，而该引用者已经被垃圾回收时，会引发此异常
+4.13RuntimeError–当检出错误不属于任何其它类别时引发
+ 4.13.1NotImplementedError–在面向对象编程中，可以先预留一个方法接口不实现，在其子类中实现。如果要求其子类一定要实现，不实现的时候会导致问题
+4.14SyntaxError–当解析器遇到语法错误时引发
+ 4.14.1IndentationError–与不正确的缩进相关的语法错误的基类
+  4.14.1.1TabError–当缩进中包含对制表符和空格的混用时引发
+4.15SystemError–当解释器发现内部错误，但情况并没有看起来那么严重，不至于到要放弃所有希望的地步，此时会引发本异常
+4.16TypeError–当操作或函数应用于不合适类型的对象时引发
+4.17ValueError–当内建操作或函数，接收到类型正确，但值不正确的参数，而且这种情况不能用诸如
+4.17.1UnicodeError–当有关Unicode编码或解码错误出现时引发
+4.17.1.1UnicodeDecodeError–当解码过程中出现的一个Unicode相关的错误时引发
+4.17.1.2UnicodeEncodeError–当编码过程中出现的一个Unicode相关的错误时引发
+4.17.1.3UnicodeTranslateError–当翻译过程中出现的一个Unicode相关的错误时引发
+4.18Warning–警告类别基类
+4.18.1DeprecationWarning–弃用特性警告基类
+4.18.2PendingDeprecationWarning–将来会被弃用特性的警告基类
+4.18.3RuntimeWarning–可疑Runtime行为警告基类
+4.18.4SyntaxWarning–可疑句法警告基类
+4.18.5UserWarning–用户代码生成警告基类
+4.18.6FutureWarning–将来会改变语义结构的警告基类
+4.18.7mportWarning–可能弄错模块导入警告基类
+4.18.8UnicodeWarning–Unicode相关的警告基类
+4.18.9BytesWarning–与bytes和bytearray相关的警告 (Python3)
+4.18.10ResourceWarninf–与资源使用相关的警告(Python3)
+
